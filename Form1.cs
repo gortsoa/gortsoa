@@ -8,26 +8,85 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class z : Form
     {
-        public Form1()
+        public z()
         {
             InitializeComponent();
         }
-        int i,u;
+
+        Random aa = new Random();
+        int[] a = new int[5];
+
         private void button1_Click(object sender, EventArgs e)
         {
-            u = 0;
-            int[] a = new int[6] { 1, 2, 3, 4, 5, 6 };
-            for (i = 0; i < 6; i++)
+                p.Text = "";
+                for (int i = 0; i <= 4; i++)
+                {
+                    a[i] = aa.Next(0, 100);
+                }
+            
+                foreach (int q in a)
+                {
+                    p.Text += Convert.ToString(q) + ",";
+                }
+
+
+
+               
+            for(int r=0;r<=a.Length;r++)
             {
-                u = u + a[i];
+                for(int j=0;j<a.Length-1;j++)
+                {
+                    if(a[j]>a[j+1])
+                    {
+                        int temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+                    }
+                }
             }
-            MessageBox.Show (u.ToString());
+            y.Text = "";
+            foreach(int o in a)
+            {
+                y.Text += Convert.ToString(o) + ",";
+            }
+
+
+            for (int d = 0; d <= a.Length; d++)
+            {
+                for (int b = 0; b < a.Length - 1; b++)
+                {
+                    if (a[b] < a[b + 1])
+                    {
+                        int temp = a[b];
+                        a[b] = a[b + 1];
+                        a[b + 1] = temp;
+                    }
+                }
+            }
+            nn.Text = "";
+            foreach (int g in a)
+            {
+                nn.Text += Convert.ToString(g) + ",";
+            }
+
+
+
+
+
+
+
             
+        }
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
             
+
+
         }
     }
 }
