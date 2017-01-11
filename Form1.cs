@@ -10,37 +10,32 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class z : Form
+    public partial class Form1 : Form
     {
-        public z()
+        public Form1()
         {
             InitializeComponent();
         }
-
         Random aa = new Random();
         int[] a = new int[5];
-
         private void button1_Click(object sender, EventArgs e)
         {
-                p.Text = "";
-                for (int i = 0; i <= 4; i++)
-                {
-                    a[i] = aa.Next(0, 100);
-                }
-            
-                foreach (int q in a)
-                {
-                    p.Text += Convert.ToString(q) + ",";
-                }
-
-
-
-               
-            for(int r=0;r<=a.Length;r++)
+            p.Text = "";
+            for (int i = 0; i <= 4; i++)
             {
-                for(int j=0;j<a.Length-1;j++)
+                a[i] = aa.Next(0, 100);
+            }
+
+            foreach  (int q in a)
+            {
+                p.Text += Convert.ToString(q) + ",";
+            }
+
+            for (int r = 0; r <= 5; r++)
+            {
+                for (int j = 0; j < 5 - 1; j++)
                 {
-                    if(a[j]>a[j+1])
+                    if (a[j] > a[j + 1])
                     {
                         int temp = a[j];
                         a[j] = a[j + 1];
@@ -49,15 +44,14 @@ namespace WindowsFormsApplication1
                 }
             }
             y.Text = "";
-            foreach(int o in a)
+            foreach (int o in a)
             {
                 y.Text += Convert.ToString(o) + ",";
             }
 
-
-            for (int d = 0; d <= a.Length; d++)
+            for (int d = 0; d <= 5; d++)
             {
-                for (int b = 0; b < a.Length - 1; b++)
+                for (int b = 0; b < 5 - 1; b++)
                 {
                     if (a[b] < a[b + 1])
                     {
@@ -67,25 +61,22 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+
             nn.Text = "";
             foreach (int g in a)
             {
                 nn.Text += Convert.ToString(g) + ",";
             }
 
-
-
-
-
-
-
-            
         }
-        
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }
